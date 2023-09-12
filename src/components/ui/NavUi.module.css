@@ -1,0 +1,6 @@
+.nav {position: fixed; bottom: 0; left: 0; right: 0; z-index: 9; display: flex; height: 64px; border-top: 1px solid #eee; background: #fff;}
+.nav .menu {display: inline-block; width: 100%; height: 100%; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+.nav .menu svg {font-size: 20px;}
+.nav .menu span {display: none; margin-top: 6px; font-size: 14px;}
+.nav .menu.active svg, .nav .menu.active svg path {color: #44b6ae;}
+.nav .menu.active span {display: block; color: #44b6ae;}

@@ -1,0 +1,21 @@
+/* reset */
+/*  */
+input {
+  width: 100%;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+a {
+  color: #333; text-decoration: none;
+}
+
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+* {font-family: 'Noto Sans KR', sans-serif !important; color: #000;}
+
+
+/* app */
+#app {width: 90%; margin: 0 auto;}
