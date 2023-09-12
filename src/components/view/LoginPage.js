@@ -33,19 +33,22 @@ const LoginPage = () => {
       <h2 className={classes.logo}><img src={mattyLogo} alt="matty" /></h2>
       <form onSubmit={onSubmitHandler}>
         <div className={classes["input-box"]}>
-          <label>이메일</label>
-          <input type="email" placeholder="이메일을 입력해주세요."
+          <label htmlFor="userEmail">이메일</label>
+          <input id="userEmail" type="email" placeholder="이메일을 입력해주세요."
             value={Email} onChange={onEmailHanlder}
           />
         </div>
         <div className={classes["input-box"]}>
-          <label>비밀번호</label>
-          <input type="password" placeholder="비밀번호를 입력해주세요."
+          <label htmlFor="userPwd">비밀번호</label>
+          <input id ="userPwd" type="password" placeholder="비밀번호를 입력해주세요."
             value={Pwd} onChange={onPwdHanlder}
           />
         </div>
         <button type="submit" className={classes["login-btn"]}>로그인</button>
       </form>
+      <p className={classes.error}>이메일을 입력해주세요.</p>
+      <p className={classes.error}>비밀번호를 입력해주세요.</p>
+      <p className={classes.error}>로그인에 실패하였습니다.<br/>이메일과 비밀번호를 확인해주세요.</p>
     </div>
   )
 }
