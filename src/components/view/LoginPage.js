@@ -24,8 +24,8 @@ const LoginPage = () => {
     console.log(loginValue);
     
     axios.post('https://mattyapi.easymedia.co.kr/api/Token', loginValue)
-      .then(response => console.log(response))
-      .catch(err => {console.log(err)})
+      .then(response => console.log("로그인 성공"))
+      .catch(err => {console.log("로그인 에러")})
   }
 
   return (
