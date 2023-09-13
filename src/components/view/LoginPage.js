@@ -1,9 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import { useDispatch } from "react-redux";
 import axios from 'axios';
 import classes from './LoginPage.module.css';
 import mattyLogo from '../../assets/images/img-matty-logo.png';
 
+// import { loginUserAction } from '../../_actions/user_action'
+
 const LoginPage = () => {
+  // const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [Email, SetEmail] = useState("");
   const [Pwd, SetPwed] = useState("");
 
@@ -16,15 +23,28 @@ const LoginPage = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    let loginValue = {
+    let loginData = {
       userid: Email,
       passwd: Pwd,
     }
     
-    console.log(loginValue);
+    console.log(loginData);
     
-    axios.post('https://mattyapi.easymedia.co.kr/api/Token', loginValue)
-      .then(response => console.log("로그인 성공"))
+    // dispatch(loginUserAction(loginData))
+    //   .then(response => {
+    //     console.log(response);
+    //     if(response.payload.loginSuccess) {
+    //       console.log("로그인 완료!");
+    //     } else {
+    //       console.log("로크인 틀림");
+    //     }
+    //   })
+    //   .catch(err => console.log("로그인 에러 발생"))
+    axios.post('https://mattyapi.easymedia.co.kr/api/Token', loginData)
+      .then(response => {
+        console.log("로그인 성공")
+        console.log(response);
+      })
       .catch(err => {console.log("로그인 에러")})
   }
 
