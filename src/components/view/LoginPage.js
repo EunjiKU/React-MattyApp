@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import { useDispatch } from "react-redux";
-import axios from 'axios';
+// import axios from 'axios';
 import classes from './LoginPage.module.css';
 import mattyLogo from '../../assets/images/img-matty-logo.png';
+import { loginApi } from '../../api/index';
 
 // import { loginUserAction } from '../../_actions/user_action'
 
@@ -28,8 +29,6 @@ const LoginPage = () => {
       passwd: Pwd,
     }
     
-    console.log(loginData);
-    
     // dispatch(loginUserAction(loginData))
     //   .then(response => {
     //     console.log(response);
@@ -40,12 +39,13 @@ const LoginPage = () => {
     //     }
     //   })
     //   .catch(err => console.log("로그인 에러 발생"))
-    axios.post('https://mattyapi.easymedia.co.kr/api/Token', loginData)
+
+    loginApi(loginData)
       .then(response => {
-        console.log("로그인 성공")
-        console.log(response);
+        console.log("로그인 성공");
+        navigate('/main')
       })
-      .catch(err => {console.log("로그인 에러")})
+      .catch(err => console.log("로그인 에러"));
   }
 
   return (
