@@ -6,7 +6,7 @@ const instance = axios.create({
 
 // 로그인 API
 function loginApi(userData) {
-  return instance.post('api/Token', userData);
+  return instance.post('api/Token', userData)
 }
 
 export {

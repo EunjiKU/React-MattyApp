@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import classes from './LoginPage.module.css';
 import mattyLogo from '../../assets/images/img-matty-logo.png';
 import { loginApi } from '../../api/index';
+import { setCookie } from '../../utils/cookies';
 
 // import { loginUserAction } from '../../_actions/user_action'
 
@@ -43,6 +44,11 @@ const LoginPage = () => {
     loginApi(loginData)
       .then(response => {
         console.log("로그인 성공");
+        // 로그인 정보 cookie 저장
+        setCookie("UserID", loginData.userid);
+        setCookie("AccessToken", response.data.AccessToken);
+        setCookie("RefreshToken", response.data.RefreshToken);
+        // 메인 페이지 이동
         navigate('/main')
       })
       .catch(err => console.log("로그인 에러"));
