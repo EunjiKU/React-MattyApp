@@ -1,10 +1,18 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
+import { ezStoryApi } from "../../api/index";
 
 const MainPage = () => {
+  useEffect(() => {
+    ezStoryApi()
+      .then((response) => {
+        console.log("이지스토리");
+        console.log(response);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div>
       <Swiper

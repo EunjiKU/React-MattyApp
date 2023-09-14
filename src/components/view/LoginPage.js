@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 // import axios from 'axios';
 import classes from './LoginPage.module.css';
 import mattyLogo from '../../assets/images/img-matty-logo.png';
 import { loginApi } from '../../api/index';
 import { setCookie } from '../../utils/cookies';
+import { loginUserIdSet } from '../../_actions/user_action'
 
 // import { loginUserAction } from '../../_actions/user_action'
 
 const LoginPage = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [Email, SetEmail] = useState("");
@@ -44,6 +45,8 @@ const LoginPage = () => {
     loginApi(loginData)
       .then(response => {
         console.log("로그인 성공");
+        // 로그인 정보 store 저장
+        dispatch(loginUserIdSet(loginData.userid))
         // 로그인 정보 cookie 저장
         setCookie("UserID", loginData.userid);
         setCookie("AccessToken", response.data.AccessToken);

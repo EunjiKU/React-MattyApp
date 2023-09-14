@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LOGIN_USER } from "./type";
+import { LOGIN_USER, SET_USERID } from "./type";
 
 const instance = axios.create({
   baseURL: `https://mattyapi.easymedia.co.kr/`
@@ -20,3 +20,8 @@ export function loginUserAction(userData) {
     payload: request
   }
 }
+
+export const loginUserIdSet = (userId) => ({
+  type: SET_USERID,
+  payload: userId,
+})
