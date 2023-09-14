@@ -1,8 +1,8 @@
 /* 이지데이 */
+.ezday-sec .tab-area .tab {font-size: 18px; color: $lightblack_color;}
+.ezday-sec .tab-area .tab ~ .tab {margin-left: 10px;}
+.ezday-sec .tab-area .tab.on {font-weight: 700; color: #000;}
 .ezday-sec .tab-head {display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;}
-.ezday-sec .tab-head .tab-area .tab {font-size: 18px; color: $lightblack_color;}
-.ezday-sec .tab-head .tab-area .tab ~ .tab {margin-left: 10px;}
-.ezday-sec .tab-head .tab-area .tab.on {font-weight: 700; color: #000;}
 .ezday-sec .tab-head .more-btn {font-size: 14px; color: #000;}
 .ezday-sec .daySwiper {height: 120px;}
 .ezday-sec .daySwiper .swiper-slide {justify-content: center; width: auto !important;}

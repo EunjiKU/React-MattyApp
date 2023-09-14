@@ -24,6 +24,10 @@ const EzDayUi = () => {
   return (
     <section className="ezday-sec">
       <h3 className="sec-tit">기념일</h3>
+      <div className="tab-area">
+        <button className="tab on">이지데이</button>
+        <button className="tab">생일자</button>
+      </div>
       <Swiper
         className="daySwiper"
         slidesPerView={"auto"}
