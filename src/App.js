@@ -4,7 +4,7 @@ import routes from './router/routes';
 import NavUi from './components/ui/NavUi';
 import HeaderUi from './components/ui/HeaderUi';
 
-import './App.css'
+import './assets/css/reset.css'
 import './assets/css/common.css'
 
 

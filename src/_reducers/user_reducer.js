@@ -1,4 +1,3 @@
-// import { LOGIN_USER, SET_USERID } from "../_actions/type";
 import * as types from "../_actions/type";
 import { getCookie } from '../utils/cookies';
 
@@ -8,18 +7,6 @@ const initialState = {
   accessToken: getCookie("AccessToken") || '',
   refreshToken: getCookie("RefreshToken") || '',
 }
-
-// eslint-disable-next-line import/no-anonymous-default-export
-// export default function (state = {}, action) {
-//   switch (action.type) {
-//     case LOGIN_USER:
-//       return { ...state, loginSuccess: action.payload };
-//     case SET_USERID:
-//       return { ...state,  }
-//     default:
-//       return state;
-//   }
-// }
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (state = initialState, action) {

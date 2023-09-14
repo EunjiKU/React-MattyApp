@@ -1,0 +1,10 @@
+.ezstory-sec .ezSwiper .swiper-slide {height: 250px; background: #f3f4f7; cursor: pointer;}
+.ezstory-sec .ezSwiper .swiper-slide a {position: relative; display: inline-block; width: 100%; height: 100%;}
+.ezstory-sec .ezSwiper .swiper-slide a .img-box {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.ezstory-sec .ezSwiper .swiper-slide a .img-box img {width: 100%; height: 100%; object-fit: cover;}
+.ezstory-sec .ezSwiper .swiper-slide a .img-box::after {content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 70%; background: linear-gradient(to bottom, transparent, #000); opacity: .8;}
+.ezstory-sec .ezSwiper .swiper-slide a .tit {position: absolute; bottom: 20px; left: 20px; font-size: 18px; font-weight: 700; color: #fff;}
+.ezstory-sec .ezSwiper {padding-bottom: 30px;}
+.ezstory-sec .ezSwiper .swiper-pagination {bottom: 0;}
+.ezstory-sec .ezSwiper .swiper-pagination .swiper-pagination-bullet  {border-radius: 8px; background: $lightblack_color; transition: width .3s;}
+.ezstory-sec .ezSwiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active  {width: 30px; background: $point_color;}
