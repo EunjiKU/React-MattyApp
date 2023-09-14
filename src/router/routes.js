@@ -3,6 +3,7 @@ import MainPage from '../components/view/MainPage'
 import BookPage from '../components/view/BookPage'
 import ContactPage from '../components/view/ContactPage'
 import MyPage from '../components/view/MyPage'
+import UserPage from '../components/view/UserPage'
 
 const routes = [
   {
@@ -24,6 +25,10 @@ const routes = [
   {
     path: "/my",
     element: <MyPage/>,
+  },
+  {
+    path: "/user/:id",
+    element: <UserPage/>,
   },
 ]
 

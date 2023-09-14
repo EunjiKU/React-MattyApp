@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import mattyLogo from '../../assets/images/img-matty-logo.png';
+import './LoginPage.css';
 import { loginApi } from '../../api/index';
 import { setCookie } from '../../utils/cookies';
 import { loginUserIdSet, loginAccessTokenSet, loginRefreshTokenSet } from '../../_actions/user_action'

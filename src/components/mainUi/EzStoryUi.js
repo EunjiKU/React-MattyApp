@@ -28,7 +28,7 @@ const EzStoryUi = () => {
         modules={[Pagination]}
       >
         {
-          ezStoryItem.map((item) => {
+          ezStoryItem.map(item => {
             return (<SwiperSlide key={item.IDX}>
               <a href={item.LinkUrl}>
                 <div className="img-box">

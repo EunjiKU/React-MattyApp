@@ -1,3 +1,19 @@
+/* 이지데이 */
+.ezday-sec .tab-head {display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;}
+.ezday-sec .tab-head .tab-area .tab {font-size: 18px; color: $lightblack_color;}
+.ezday-sec .tab-head .tab-area .tab ~ .tab {margin-left: 10px;}
+.ezday-sec .tab-head .tab-area .tab.on {font-weight: 700; color: #000;}
+.ezday-sec .tab-head .more-btn {font-size: 14px; color: #000;}
+.ezday-sec .daySwiper {height: 120px;}
+.ezday-sec .daySwiper .swiper-slide {justify-content: center; width: auto !important;}
+.ezday-sec .daySwiper .swiper-slide ~ .swiper-slide {margin-left: 10px;}
+.ezday-sec .daySwiper .swiper-slide .img-box {width: 60px; height: 60px; border-radius: 8px; overflow: hidden;}
+.ezday-sec .daySwiper .swiper-slide .img-box img {width: 100%; height: 100%; object-fit: cover;}
+.ezday-sec .daySwiper .swiper-slide .txt-box .name {margin: 10px 0 4px; text-align: center;}
+.ezday-sec .daySwiper .swiper-slide .txt-box .day {width: 20px; height: 18px; margin: 0 auto; font-size: 12px; text-align: center; color: #fff; border-radius: 5px; background: #44b6ae;}
+.ezday-sec .daySwiper .swiper-slide .txt-box .birthday {font-size: 13px; color: $point_color;}
+
+/* 이지스토리 */
 .ezstory-sec .ezSwiper .swiper-slide {height: 250px; background: #f3f4f7; cursor: pointer;}
 .ezstory-sec .ezSwiper .swiper-slide a {position: relative; display: inline-block; width: 100%; height: 100%;}
 .ezstory-sec .ezSwiper .swiper-slide a .img-box {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
