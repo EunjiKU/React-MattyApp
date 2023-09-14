@@ -6,7 +6,7 @@ import classes from './LoginPage.module.css';
 import mattyLogo from '../../assets/images/img-matty-logo.png';
 import { loginApi } from '../../api/index';
 import { setCookie } from '../../utils/cookies';
-import { loginUserIdSet } from '../../_actions/user_action'
+import { loginUserIdSet, loginAccessTokenSet, loginRefreshTokenSet } from '../../_actions/user_action'
 
 // import { loginUserAction } from '../../_actions/user_action'
 
@@ -45,13 +45,15 @@ const LoginPage = () => {
     loginApi(loginData)
       .then(response => {
         console.log("로그인 성공");
-        // 로그인 정보 store 저장
-        dispatch(loginUserIdSet(loginData.userid))
-        // 로그인 정보 cookie 저장
+        // ✅ 로그인 정보 store 저장
+        dispatch(loginUserIdSet(loginData.userid));
+        dispatch(loginAccessTokenSet(response.data.AccessToken));
+        dispatch(loginRefreshTokenSet(response.data.RefreshToken));
+        // ✅ 로그인 정보 cookie 저장
         setCookie("UserID", loginData.userid);
         setCookie("AccessToken", response.data.AccessToken);
         setCookie("RefreshToken", response.data.RefreshToken);
-        // 메인 페이지 이동
+        // ✅ 메인 페이지 이동
         navigate('/main')
       })
       .catch(err => console.log("로그인 에러"));
