@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import mattyLogo from '../../assets/images/img-matty-logo.png';
@@ -10,9 +10,14 @@ import { loginUserIdSet, loginAccessTokenSet, loginRefreshTokenSet } from '../..
 const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const inputId = useRef();
+  const inputPwd = useRef();
 
   const [Email, SetEmail] = useState("");
   const [Pwd, SetPwd] = useState("");
+  const [isEmptyEmail, setIsEmptyEmail] = useState(false);
+  const [isEmptyPwd, setIsEmptyPwd] = useState(false);
+  const [isErrLogin, setIsErrLogin] = useState(false);
 
   const onEmailHanlder = (e) => {
     SetEmail(e.currentTarget.value);
@@ -42,7 +47,25 @@ const LoginPage = () => {
         // ✅ 메인 페이지 이동
         navigate('/main')
       })
-      .catch(err => console.log("로그인 에러"));
+      .catch(err => {
+        console.log("로그인 에러")
+
+        if(Email.trim() === '') {
+          setIsEmptyEmail(true);
+          setIsEmptyPwd(false);
+          setIsErrLogin(false);
+          inputId.current.focus();
+        } else if(Pwd.trim() === '') {
+          setIsEmptyEmail(false);
+          setIsEmptyPwd(true);
+          setIsErrLogin(false);
+          inputPwd.current.focus();
+        } else {
+          setIsEmptyEmail(false);
+          setIsEmptyPwd(false);
+          setIsErrLogin(true);
+        }
+      });
   }
 
   return (
@@ -51,21 +74,21 @@ const LoginPage = () => {
       <form onSubmit={onSubmitHandler}>
         <div className="input-box">
           <label htmlFor="userEmail">이메일</label>
-          <input id="userEmail" type="email" placeholder="이메일을 입력해주세요."
+          <input ref={inputId} id="userEmail" type="email" placeholder="이메일을 입력해주세요."
             value={Email} onChange={onEmailHanlder}
           />
+          {isEmptyEmail && <p className="error">이메일을 입력해주세요.</p>}
         </div>
         <div className="input-box">
           <label htmlFor="userPwd">비밀번호</label>
-          <input id ="userPwd" type="password" placeholder="비밀번호를 입력해주세요."
+          <input ref={inputPwd} id ="userPwd" type="password" placeholder="비밀번호를 입력해주세요."
             value={Pwd} onChange={onPwdHanlder}
           />
+          {isEmptyPwd && <p className="error">비밀번호를 입력해주세요.</p>}
         </div>
         <button type="submit" className="login-btn">로그인</button>
       </form>
-      <p className="error">이메일을 입력해주세요.</p>
-      <p className="error">비밀번호를 입력해주세요.</p>
-      <p className="error">로그인에 실패하였습니다.<br/>이메일과 비밀번호를 확인해주세요.</p>
+      {isErrLogin && <p className="error">로그인에 실패하였습니다.<br/>이메일과 비밀번호를 확인해주세요.</p>}
     </div>
   )
 }

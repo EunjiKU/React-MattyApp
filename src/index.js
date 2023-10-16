@@ -4,7 +4,7 @@ import App from './App';
 import { CookiesProvider } from 'react-cookie';
 
 // ✅ Redux 관련 불러오기
-import { createStore } from 'redux';
+import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Reducer from './_reducers';
 
