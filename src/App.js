@@ -7,8 +7,6 @@ import HeaderUi from './components/ui/HeaderUi';
 import './assets/css/reset.css'
 import './assets/css/common.css'
 
-
-
 function App() {
   return (
     <div id="app">

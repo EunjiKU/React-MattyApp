@@ -1,5 +1,6 @@
 /* 이지데이 */
-.ezday-sec .tab-area .tab {font-size: 18px; color: $lightblack_color;}
+.tab-head {display: flex; justify-content: space-between;}
+.ezday-sec .tab-area .tab {margin-bottom: 10px; font-size: 18px; color: red}
 .ezday-sec .tab-area .tab ~ .tab {margin-left: 10px;}
 .ezday-sec .tab-area .tab.on {font-weight: 700; color: #000;}
 .ezday-sec .tab-head {display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;}
@@ -23,4 +24,4 @@
 .ezstory-sec .ezSwiper {padding-bottom: 30px;}
 .ezstory-sec .ezSwiper .swiper-pagination {bottom: 0;}
 .ezstory-sec .ezSwiper .swiper-pagination .swiper-pagination-bullet  {border-radius: 8px; background: $lightblack_color; transition: width .3s;}
-.ezstory-sec .ezSwiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active  {width: 30px; background: $point_color;}
+.ezstory-sec .ezSwiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active  {width: 30px; background: #44b6ae;}
